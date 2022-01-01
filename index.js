@@ -72,4 +72,4 @@ if(msg.guild && msg.content.startsWith('/botName')){
 }
 });
 // app.listen(port, () => console.log(`Bot listening at http://localhost:${port}`));
-client.login(process.env.LOGIN_TOKEN)
+client.login(process.env.TOKEN);
