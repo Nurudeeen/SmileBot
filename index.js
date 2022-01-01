@@ -1,6 +1,6 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT;
+//const express = require('express');
+//const app = express();
+//const port = process.env.PORT;
 
 require('dotenv').config()
 const fs = require('fs');
@@ -31,7 +31,7 @@ function sleep(milliseconds) {
     } while (currentDate - date < milliseconds);
   }
 
-app.get('/', (req, res) => res.send('Bot is alive!'));
+//app.get('/', (req, res) => res.send('Bot is alive!'));
 
 client.on('ready', () =>{
     console.log(`logged in as ${client.user.tag}!`)
@@ -71,5 +71,5 @@ if(msg.guild && msg.content.startsWith('/botName')){
     }
 }
 });
-app.listen(port, () => console.log(`Bot listening at http://localhost:${port}`));
+//app.listen(port, () => console.log(`Bot listening at http://localhost:${port}`));
 client.login(process.env.LOGIN_TOKEN)
