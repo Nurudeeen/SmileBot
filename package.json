@@ -10,7 +10,7 @@
   "author": "Gustavo Ortez",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.5.0",
+    "discord.js": "^16.6.0",
     "dotenv": "^10.0.0",
     "download": "^8.0.0",
     "express": "^4.17.2",
