@@ -1,8 +1,8 @@
-//const express = require('express');
-//const app = express();
-//const port = process.env.PORT;
+// const express = require('express');
+// const app = express();
+// const port = process.env.PORT;
 
-require('dotenv').config()
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const download = require('download');
@@ -71,5 +71,5 @@ if(msg.guild && msg.content.startsWith('/botName')){
     }
 }
 });
-//app.listen(port, () => console.log(`Bot listening at http://localhost:${port}`));
+// app.listen(port, () => console.log(`Bot listening at http://localhost:${port}`));
 client.login(process.env.LOGIN_TOKEN)
