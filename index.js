@@ -55,7 +55,7 @@ if(msg.guild && msg.content.startsWith('/botName')){
         if(!msg.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
             return msg.reply('Warning: This is a Bot specific command!')
         } else{
-        let text = msg.content.slice('/DM'.length);
+        let text = msg.content.slice('/botDM'.length);
         msg.guild.members.fetch().then(members =>{
             members.forEach(member =>{
             var memberCount = members.filter(member => !member.user.bot).size;  
