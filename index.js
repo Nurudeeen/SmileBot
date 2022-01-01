@@ -43,53 +43,15 @@ if(msg.guild && msg.content.startsWith('/botName')){
     if(!msg.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
         return msg.reply('Warning: This is a Bot specific command!');
     } else{
-        const name = msg.content.slice('/resetName'.length);
+        const name = msg.content.slice('/botName'.length);
         msg.delete();
         client.user.setUsername(name);
         msg.author.send('Bot name changed! Warning: This can be only be done once a week!')
             }
         }
 
-        if(msg.content.startsWith('/botAvatar')){
-            if(!msg.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
-                return msg.reply('You not permitted to use this command')
-            } else{
-                let url = msg.content.slice('/botAvatar'.length);
-                msg.delete();
-                
-                ( async () => {
-                    await download(url, './uploads');
     
-                    const imageDirPath = path.resolve(__dirname, './uploads');
-                    const files = fs.readdirSync(imageDirPath);
-        
-                    for(const file of files) {
-                        if(file === 'avatar.jpg'){
-                            fs.unlinkSync(imageDirPath + '/' + file);
-                        } else{
-                           fs.rename(
-                           imageDirPath + '/' + file,
-                           imageDirPath + '/avatar.jpg', 
-                           (err) => {
-                               if(err){
-                               console.log(err);
-                               }
-                           }
-                           )};
-                   };
-                  
-            
-                
-                })();
-    
-                const image = path.resolve(__dirname, './uploads');
-                client.user.setAvatar(fs.readFileSync(image + '/avatar.jpg'));
-                msg.author.send("Avatar Updated!");   
-            };
-    
-        };
-    
-    if (msg.guild && msg.content.startsWith('/DM')) {
+    if (msg.guild && msg.content.startsWith('/botDM')) {
         if(!msg.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR)){
             return msg.reply('Warning: This is a Bot specific command!')
         } else{
@@ -106,7 +68,6 @@ if(msg.guild && msg.content.startsWith('/botName')){
         });
         }
         );
-        msg.delete();
     }
 }
 });
